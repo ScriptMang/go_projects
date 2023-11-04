@@ -1,7 +1,7 @@
 This program will query a  postgresql Database for data.
 In this case the People's  database.
 It contains the person's ID, name, and age
-The type of query selected is used based on user input.
+The type of query selected is based on user input.
 There are five numbered options to choose from.
 
 1. Gives each peron's name(first and last name)
