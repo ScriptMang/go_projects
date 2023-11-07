@@ -66,7 +66,7 @@ func (opt Option) Response(conn *pgx.Conn) error {
 
 func main() {
 	
-	uri:= "postgres://andyperalta@localhost/PeopleDB"
+	uri:= "postgres://username:secret@ipAddr:5432/PeopleDB"
 	os.Setenv("DATABASE_URL", uri)
   
 	conn, err := pgx.Connect(context.Background(), os.Getenv("DATABASE_URL"))
