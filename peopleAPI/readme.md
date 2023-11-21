@@ -1,8 +1,9 @@
-This program will query a  postgresql Database for data.
-In this case the People's  database.
+This program will query a postgresql Database for data.
+In this case the People's database.
 It contains the person's ID, name, and age
 The type of query selected is based on user input.
 There are five numbered options to choose from.
+Note: you must provide your own postgresql database.
 
 1. Gives each peron's name(first and last name)
 2. Gives each person's age
