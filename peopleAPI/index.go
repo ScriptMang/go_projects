@@ -28,9 +28,9 @@ func (op Option) String() string{
 	var str string
 	switch choice {
 	  case 1:
-	  	str = fmt.Sprintf("%v, %v", op.Fname, op.Lname)
+	  	str = fmt.Sprintf("%v %v", op.Fname, op.Lname)
 	  case 2:
-	  	str = fmt.Sprintf("%v", op.Fname)	
+	  	str = fmt.Sprintf("%v %v, %d", op.Fname, op.Lname, op.Age)	
 	  case 3:
 	  	str = fmt.Sprintf("%v", op.Fname)	
 	  case 4:
@@ -65,7 +65,7 @@ func query(choice int, ctx context.Context,
 		ctx, db, &users, "SELECT firstname, lastname FROM People",)
 	case 2:
 	 	err = pgxscan.Select(
-		ctx, db, &users, "SELECT firstname, lastname FROM People",)
+		ctx, db, &users, "SELECT firstname, lastname, age FROM People",)
 	case 3:
 	 	err = pgxscan.Select(
 		ctx, db, &users, "SELECT firstname FROM People",)
