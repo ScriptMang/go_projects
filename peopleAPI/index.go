@@ -32,7 +32,7 @@ func (op Option) String() string{
 	  case 2:
 	  	str = fmt.Sprintf("%v %v, %d", op.Fname, op.Lname, op.Age)	
 	  case 3:
-	  	str = fmt.Sprintf("%v", op.Fname)	
+	  	str = fmt.Sprintf("%v %v, %d", op.Fname, op.Lname, op.Age)	
 	  case 4:
 	  	str = fmt.Sprintf("%v", op.Fname)	
 	  case 5:
@@ -68,7 +68,8 @@ func query(choice int, ctx context.Context,
 		ctx, db, &users, "SELECT firstname, lastname, age FROM People",)
 	case 3:
 	 	err = pgxscan.Select(
-		ctx, db, &users, "SELECT firstname FROM People",)
+		ctx, db, &users, "SELECT firstname, lastname, age FROM People\n" +
+		"WHERE firstname IN ('Dave', 'Yennifer')",)
 	case 4:
 	 	err = pgxscan.Select(
 		ctx, db, &users, "SELECT firstname FROM People",)
