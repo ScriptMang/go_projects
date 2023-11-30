@@ -36,7 +36,7 @@ func (op Option) String() string{
 	  case 4:
 	  	str = fmt.Sprintf("%v %v, id: %d", op.Fname, op.Lname, op.ID)	
 	  case 5:
-	  	str = fmt.Sprintf("%v", op.Fname)	
+	  	str = fmt.Sprintf("%v, age: %v", op.Lname, op.Age)	
 	}
 
 	return str
@@ -75,7 +75,7 @@ func query(choice int, ctx context.Context,
 		ctx, db, &users, "SELECT firstname, lastname, id FROM People",)
 	case 5:
 	 	err = pgxscan.Select(
-		ctx, db, &users, "SELECT firstname FROM People",)
+		ctx, db, &users, "SELECT lastname, age FROM People",)
 	}
 	
 	return loopFields(choice, users, err)
